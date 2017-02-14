@@ -30,16 +30,29 @@ Browse to http://localhost:8008
     * config
 
 * src
+
+    Source code of project
+
     * controllers
+
+        Controllers classes
+
     * models
+
+        Project models for interacting with databases and other sources of data
+
     * views
+
+        Contains views
 
 * tests
 
-Contains unit tests for project
+    Contains unit tests for project
 
 * var
     * logs
+
+        Log files
 
 * vendor
 
@@ -52,6 +65,7 @@ Contains unit tests for project
         * js
     * data
     * plugins
+
         Contains plugins used in project e.g (bootstrap, jquery, etc.)
 
 
