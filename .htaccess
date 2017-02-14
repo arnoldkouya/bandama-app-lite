@@ -1,0 +1,11 @@
+# File .htaccess : /
+
+RewriteEngine on
+
+#RewriteCond %{REQUEST_FILE_NAME}% !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{HTTP_ACCEPT} text/html|application/json|application/xml|text/xml
+
+#RewriteRule ^(.*)$ web/app.php?url=$1 [QSA,L]
+RewriteRule ^(.*)$ index.php
