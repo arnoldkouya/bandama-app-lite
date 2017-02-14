@@ -6,10 +6,10 @@ namespace App\Controller;
 class HomeController extends BaseController {
 
     public function indexAction() {
-        $this->render(__DIR__.'/../views/home/index.php');
+        $this->render('home:index.php');
     }
 
     public function helloAction($name) {
-        $this->render(__DIR__.'/../views/home/hello.php');
+        $this->render('home:hello.php', array('name' => $name));
     }
 }

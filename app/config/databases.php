@@ -7,6 +7,9 @@ return array(
         'database_port' => 3306,
         'database_name' => 'bandama',
         'database_user' => 'root',
-        'database_password' => ''
+        'database_password' => '',
+        'attributes' => array(
+            'PDO::ATTR_ERRMOD' => 'PDO::ERRMODE_EXCEPTION'
+        )
     )
 );

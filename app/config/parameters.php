@@ -7,6 +7,8 @@ return array(
     'app_version_name' => '1.0.0',
     'app_base_url' => 'http://127.0.0.1:8008',
     'dir_root' => '',
-    'dir_assets' => '/assets',
-    'dir_data' => '/data'
+    'dir_assets' => '/web/assets',
+    'dir_data' => '/web/data',
+    'dir_plugins' => '/web/plugins',
+    'view_path' => '/src/views/'
 );

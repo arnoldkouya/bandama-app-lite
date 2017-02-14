@@ -7,14 +7,14 @@ This is a simple skeleton project for Bandama that includes Monolog.
 It's recommended that you use [Composer](https://getcomposer.org/) to create project.
 
 ```bash
-$ composer create-project --no-interaction bandama/project bandama-project
+$ composer create-project --no-interaction bandama/app-lite bandama-project
 ```
 
 This will create new Bandama project and all required dependencies including Bandama Framework. Bandama Project requires PHP 5.4 or newer.
 
 ## Run the project
 
-Create an index.php file with the following contents:
+Got to the root directory of your project and type
 
 ```bash
 $ cd bandama-project
@@ -26,6 +26,32 @@ Browse to http://localhost:8008
 
 ## Project structure
 
+* app
+    * config
+
+* src
+    * controllers
+    * models
+    * views
+
+* tests
+
+Contains unit tests for project
+
+* var
+    *logs
+
+* vendor
+
+Contains third party library, including Bandama Framework
+
+* web
+    * assets
+        * css
+        * images
+        * js
+    * data
+    * plugins
 
 
 ## Credits
