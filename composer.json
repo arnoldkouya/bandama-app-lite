@@ -1,9 +1,9 @@
 {
-    "name": "Bandama Skeleton",
+    "name": "bandama/project-lite",
     "description": "Bandama Application Skeleton with Monolog",
     "type": "project",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.0-dev",
     "require-dev": {
         "php": ">=5.4"
     },
