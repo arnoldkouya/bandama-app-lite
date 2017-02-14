@@ -1,6 +1,6 @@
 # Bandama Skeleton
 
-This is a simple skeleton project for Bandama that includes Monolog.
+This is a simple skeleton project for [Bandama Framework](https://github.com/jfyoboue/bandama-framework) that includes Monolog.
 
 ## Create a new project
 
@@ -39,11 +39,11 @@ Browse to http://localhost:8008
 Contains unit tests for project
 
 * var
-    *logs
+    * logs
 
 * vendor
 
-Contains third party library, including Bandama Framework
+    Contains third party library, including Bandama Framework
 
 * web
     * assets
@@ -52,6 +52,7 @@ Contains third party library, including Bandama Framework
         * js
     * data
     * plugins
+        Contains plugins used in project e.g (bootstrap, jquery, etc.)
 
 
 ## Credits
