@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "413d77b045ef637d9027023a4e8f9484",
+    "hash": "7397871ce6541a65bddfce4e6bf8dfba",
     "content-hash": "99d862a091bf5292072d9a8fb07f2589",
     "packages": [
         {
             "name": "bandama/framework",
-            "version": "1.0.4",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jfyoboue/bandama-framework.git",
-                "reference": "3a42385623e3a37c05bd57b6bf5ab1ee408fe938"
+                "reference": "5866dd45331555d61fb7cb724095ac6684653ced"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jfyoboue/bandama-framework/zipball/3a42385623e3a37c05bd57b6bf5ab1ee408fe938",
-                "reference": "3a42385623e3a37c05bd57b6bf5ab1ee408fe938",
+                "url": "https://api.github.com/repos/jfyoboue/bandama-framework/zipball/5866dd45331555d61fb7cb724095ac6684653ced",
+                "reference": "5866dd45331555d61fb7cb724095ac6684653ced",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 }
             ],
             "description": "Bandama is a microframework for PHP application",
-            "time": "2017-02-14 00:30:31"
+            "time": "2017-02-19 18:46:16"
         },
         {
             "name": "monolog/monolog",

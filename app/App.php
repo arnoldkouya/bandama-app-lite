@@ -2,6 +2,10 @@
 
 namespace App;
 
+use \Monolog\Logger;
+use \Monolog\Handler\StreamHandler;
+
+
 /**
  * Implements Bandama application logic
  *
@@ -11,6 +15,22 @@ namespace App;
  * @since 1.0.0 Class creation
  */
 class App extends \Bandama\App {
+    // Fields
+    /**
+     * @var \Bandama\Configuration Application configuration parameters
+     */
+    protected $config;
+
+    /**
+     * @var \Bandama\Foundation\Router\Router Routing component
+     */
+    protected $router;
+
+    /**
+     * @var 
+     */
+    protected $logger;
+
     // Constructors
     /**
      * Constructor
@@ -27,6 +47,27 @@ class App extends \Bandama\App {
         $router = $this->get('router');
 
         include($config->get('routes'));
+
+        $this->config = $config;
+        $this->router = $router;
+
+        $services = $this->config->get('services');
+        if (count($services) > 0) {
+            foreach($services as $key => $value) {
+                $this->container->set($key, function() use ($value) {
+                    return $value;
+                });
+            }
+        }
+
+        // Create the logger
+        $logger = new Logger('app_logger');
+        // Now add some handlers (StreamHandler)
+        $logger->pushHandler(new StreamHandler(__DIR__.'/..'.$this->config->get('app_log'), Logger::DEBUG));
+
+        $this->container->set('logger', function() use($logger) {
+            return $logger;
+        });
     }
 
 

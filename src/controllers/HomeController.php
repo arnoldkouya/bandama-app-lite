@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 
-class HomeController extends BaseController {
+class HomeController extends \App\Controller {
 
     public function indexAction() {
         $this->render('home:index.php');

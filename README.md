@@ -1,4 +1,4 @@
-# Bandama Skeleton
+# Bandama Application Lite Skeleton
 
 This is a simple skeleton project for [Bandama Framework](https://github.com/jfyoboue/bandama-framework) that includes Monolog.
 
@@ -27,45 +27,48 @@ Browse to http://localhost:8008
 ## Project structure
 
 * app
+    This folder contains globals elements of application. It contains App and Configuration classes.
+    - App.php : This class implements application logic
+    - Configuration.php : Class for managing application configuration parameters
+    - Controller.php : 
     * config
+        Config folder contains configuration parameters splitted in many files:
+        - databases.php : Collection of databases configuration
+        - parameters.php : Application base parameters
+        - routes.php : Contains routes
+        - services.php : Collection of services
+        - settings.php : Merging of other files
 
 * src
-
-    Source code of project
-
+    Project source code
     * controllers
-
         Controllers classes
-
     * models
-
         Project models for interacting with databases and other sources of data
-
     * views
-
         Contains views
+    * services
 
 * tests
-
     Contains unit tests for project
 
 * var
     * logs
-
         Log files
 
 * vendor
-
     Contains third party library, including Bandama Framework
 
 * web
+    - app.php : Application entry point
+    It is the entry point of application
     * assets
         * css
         * images
         * js
     * data
+        Contains another assets and data
     * plugins
-
         Contains plugins used in project e.g (bootstrap, jquery, etc.)
 
 

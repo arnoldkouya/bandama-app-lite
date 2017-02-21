@@ -9,7 +9,7 @@ return array(
         'database_user' => 'root',
         'database_password' => '',
         'attributes' => array(
-            'PDO::ATTR_ERRMOD' => 'PDO::ERRMODE_EXCEPTION'
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
         )
     )
 );

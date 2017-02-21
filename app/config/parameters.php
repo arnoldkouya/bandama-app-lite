@@ -10,5 +10,6 @@ return array(
     'dir_assets' => '/web/assets',
     'dir_data' => '/web/data',
     'dir_plugins' => '/web/plugins',
-    'view_path' => '/src/views/'
+    'view_path' => '/src/views/',
+    'app_log' => '/var/logs/app.log'
 );
