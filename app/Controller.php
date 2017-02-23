@@ -21,6 +21,11 @@ class Controller extends \Bandama\Foundation\Controller\Controller {
     protected $router;
 
     /**
+     * @var \Bandama\Foundation\Session\Session
+     */
+     protected $session;
+
+    /**
      * @var \Monolog\Logger Logging component
      */
      protected $logger;
@@ -35,6 +40,7 @@ class Controller extends \Bandama\Foundation\Controller\Controller {
         $this->app = \App\App::getInstance();
         $this->config = $this->app->get('config');
         $this->router = $this->app->get('router');
+        $this->session = $this->app->get('session');
         $this->logger = $this->app->get('logger');
         $this->viewPath = __DIR__.'/..'.$this->config->get('view_path');
     }
