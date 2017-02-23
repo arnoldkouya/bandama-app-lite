@@ -1,5 +1,9 @@
 # File .htaccess : /
 
+Options -Indexes
+
+Options +FollowSymlinks
+
 RewriteEngine on
 
 #RewriteCond %{REQUEST_FILE_NAME}% !-f
@@ -8,4 +12,3 @@ RewriteEngine on
 RewriteCond %{HTTP_ACCEPT} text/html|application/json|application/xml|text/xml
 
 #RewriteRule ^(.*)$ web/app.php?url=$1 [QSA,L]
-RewriteRule ^(.*)$ index.php

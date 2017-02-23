@@ -51,6 +51,12 @@ class App extends \Bandama\App {
         $this->config = $config;
         $this->router = $router;
 
+        // Setting baseUri
+        if ($config->get('app_base_uri')) {
+            $this->baseUri = $config->get('app_base_uri');
+        }
+
+        // Injecting services container
         $services = $this->config->get('services');
         if (count($services) > 0) {
             foreach($services as $key => $value) {
