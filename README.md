@@ -71,6 +71,10 @@ Browse to http://localhost:8008
     * plugins
         Contains plugins used in project e.g (bootstrap, jquery, etc.)
 
+## Change log
+
+    * 1.0.1
+        - Bug fixed in .htaccess 
 
 ## Credits
 
