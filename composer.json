@@ -4,11 +4,6 @@
     "type": "project",
     "license": "MIT",
     "version": "1.0.0",
-    "authors": [{
-        "name": "Jean-François YOBOUE",
-        "email": "yoboue.kouamej@live.fr",
-        "role": "Developer"
-    }],
     "require-dev": {
         "php": ">=5.4"
     },

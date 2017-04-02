@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "bandama/framework",
-            "version": "1.0.8",
+            "version": "1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jfyoboue/bandama-framework.git",
-                "reference": "a5a8a948490c9ad891a963b1cf5781ad1dc7b798"
+                "reference": "6a924174ce79c11bab30e9f0e57dab169e9fbc29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jfyoboue/bandama-framework/zipball/a5a8a948490c9ad891a963b1cf5781ad1dc7b798",
-                "reference": "a5a8a948490c9ad891a963b1cf5781ad1dc7b798",
+                "url": "https://api.github.com/repos/jfyoboue/bandama-framework/zipball/6a924174ce79c11bab30e9f0e57dab169e9fbc29",
+                "reference": "6a924174ce79c11bab30e9f0e57dab169e9fbc29",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 }
             ],
             "description": "Bandama is a microframework for PHP application",
-            "time": "2017-02-23 09:54:41"
+            "time": "2017-03-03 06:49:41"
         },
         {
             "name": "monolog/monolog",

@@ -2,15 +2,11 @@
 
 namespace App;
 
-use \Monolog\Logger;
-use \Monolog\Handler\StreamHandler;
-
 
 /**
  * Implements Bandama application logic
  *
  * @package App
- * @author Jean-François YOBOUE <yoboue.kouamej@live.fr>
  * @version 1.0.0
  * @since 1.0.0 Class creation
  */
@@ -42,38 +38,47 @@ class App extends \Bandama\App {
      */
     protected function __construct($configFile = null, $mode = self::APP_MODE_PROD) {
         parent::__construct($configFile, $mode);
-        
-        $config = $this->get('config');
-        $router = $this->get('router');
-
-        include($config->get('routes'));
-
-        $this->config = $config;
-        $this->router = $router;
 
         // Setting baseUri
-        if ($config->get('app_base_uri')) {
-            $this->baseUri = $config->get('app_base_uri');
+        if ($this->config->get('app_base_uri')) {
+            $this->baseUri = $this->config->get('app_base_uri');
         }
 
-        // Injecting services container
-        $services = $this->config->get('services');
-        if (count($services) > 0) {
-            foreach($services as $key => $value) {
-                $this->container->set($key, function() use ($value) {
-                    return $value;
-                });
-            }
-        }
+        $this->registerServices();
+        $this->registerLogger();        
+    }
 
-        // Create the logger
-        $logger = new Logger('app_logger');
-        // Now add some handlers (StreamHandler)
-        $logger->pushHandler(new StreamHandler(__DIR__.'/..'.$this->config->get('app_log'), Logger::DEBUG));
 
-        $this->container->set('logger', function() use($logger) {
-            return $logger;
+    // Overrides
+    /**
+     * Create and add config object to container
+     *
+     * @return void
+     */
+    protected function registerConfig() {
+        $this->config = new Configuration($this->configFile);
+        $config = $this->config;
+
+        $this->container->set('config', function() use ($config) {
+            return $config;
         });
+    }
+
+    /**
+     * Create and add router component to container
+     *
+     * @return void
+     */
+    protected function registerRouter() {
+        $config = $this->get('config');
+        
+        $this->container->set('router', function () use ($config) {
+            $router = new \Bandama\Foundation\Router\Router();
+            include($config->get('routes'));
+
+            return $router;
+        });
+        
     }
 
 
@@ -91,5 +96,38 @@ class App extends \Bandama\App {
         }
 
         return self::$_instance;
+    }
+
+    /**
+     * Create and add services to container
+     *
+     * @return void
+     */
+    protected function registerServices() {
+        // Injecting services container
+        $services = $this->config->get('services');
+        if (count($services) > 0) {
+            foreach($services as $key => $value) {
+                $this->container->set($key, function() use ($value) {
+                    return $value;
+                });
+            }
+        }
+    }
+
+    /**
+     * Create and add logger object to container
+     *
+     * @return void
+     */
+    protected function registerLogger() {
+        // Create the logger
+        $logger = new \Monolog\Logger('app_logger');
+        // Now add some handlers (StreamHandler)
+        $logger->pushHandler(new \Monolog\Handler\StreamHandler(__DIR__.'/..'.$this->config->get('app_log'), \Monolog\Logger::DEBUG));
+
+        $this->container->set('logger', function() use($logger) {
+            return $logger;
+        });
     }
 }
