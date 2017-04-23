@@ -73,6 +73,8 @@ Browse to http://localhost:8008
 
 ## Change log
 
+* 1.1.0
+    - Improvement of application setup
 * 1.0.1
     - Bug fixed in .htaccess 
 

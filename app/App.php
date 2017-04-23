@@ -38,18 +38,26 @@ class App extends \Bandama\App {
      */
     protected function __construct($configFile = null, $mode = self::APP_MODE_PROD) {
         parent::__construct($configFile, $mode);
-
-        // Setting baseUri
-        if ($this->config->get('app_base_uri')) {
-            $this->baseUri = $this->config->get('app_base_uri');
-        }
-
+        
+        $this->setParameters();
         $this->registerServices();
         $this->registerLogger();        
     }
 
 
     // Overrides
+    /**
+     * Set application parameters
+     *
+     * @return void
+     */
+    protected function setParameters() {
+        // Setting baseUri
+        if ($this->config->get('app_base_uri')) {
+            $this->baseUri = $this->config->get('app_base_uri');
+        }
+    }
+    
     /**
      * Create and add config object to container
      *
