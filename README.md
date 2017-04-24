@@ -28,26 +28,26 @@ Browse to http://localhost:8008
 
 * app
     This folder contains globals elements of application. It contains App and Configuration classes.
-    - App.php : This class implements application logic
-    - Configuration.php : Class for managing application configuration parameters
-    - Controller.php : 
-    * config
-        Config folder contains configuration parameters splitted in many files:
-        - databases.php : Collection of databases configuration
-        - parameters.php : Application base parameters
-        - routes.php : Contains routes
-        - services.php : Collection of services
-        - settings.php : Merging of other files
+        - App.php : This class implements application logic
+        - Configuration.php : Class for managing application configuration parameters
+        - Controller.php
+            * config
+                Config folder contains configuration parameters splitted in many files:
+                    - databases.php : Collection of databases configuration
+                    - parameters.php : Application base parameters
+                    - routes.php : Contains routes
+                    - services.php : Collection of services
+                    - settings.php : Merging of other files
 
 * src
     Project source code
-    * controllers
-        Controllers classes
-    * models
-        Project models for interacting with databases and other sources of data
-    * views
-        Contains views
-    * services
+        * controllers
+            Controllers classes
+        * models
+            Project models for interacting with databases and other sources of data
+        * views
+            Contains views
+        * services
 
 * tests
     Contains unit tests for project
@@ -75,6 +75,7 @@ Browse to http://localhost:8008
 
 * 1.1.0
     - Improvement of application setup
+    - Adding HelloServiceTest class 
     - Adding basic layout content
 * 1.0.1
     - Bug fixed in .htaccess 
