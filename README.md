@@ -75,6 +75,7 @@ Browse to http://localhost:8008
 
 * 1.1.0
     - Improvement of application setup
+    - Adding basic layout content
 * 1.0.1
     - Bug fixed in .htaccess 
 
