@@ -101,6 +101,7 @@ class App extends \Bandama\App {
     public static function getInstance($configFile = null, $mode = self::APP_MODE_PROD) {
         if (is_null(self::$_instance)) {
             self::$_instance = new self($configFile, $mode);
+            self::$_instance->setup();
         }
 
         return self::$_instance;
