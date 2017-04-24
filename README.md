@@ -41,13 +41,13 @@ Browse to http://localhost:8008
 
 * src
     Project source code
-    * controllers
+    - controllers
         Controllers classes
-    * models
+    - models
         Project models for interacting with databases and other sources of data
-    * views
+    - views
         Contains views
-    * services
+    - services
 
 * tests
     Contains unit tests for project
