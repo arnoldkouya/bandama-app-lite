@@ -1,12 +1,12 @@
 <?php
 
 // Default session handler
-/*return array(
+return array(
     'handler' => 'default'
-);*/
+);
 
 // PDO Session Handanler
-return array(
+/*return array(
     'handler' => 'pdo',
     'parameters' => array(
         'database' => 'default',
@@ -18,4 +18,4 @@ return array(
         'col_created_at' => 'created_at',
         'col_updated_at' => 'updated_at'
     )
-);
+);*/
