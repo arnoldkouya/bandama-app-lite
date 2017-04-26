@@ -41,6 +41,7 @@ Browse to http://localhost:8008
         - parameters.php : Application base parameters
         - routes.php : Contains routes
         - services.php : Collection of services
+        - sessions.php : User sessions parameters
         - settings.php : Merging of other files
 
 * src

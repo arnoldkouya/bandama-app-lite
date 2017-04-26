@@ -6,7 +6,8 @@ namespace App;
  * Controller class
  *
  * @package App
- * @version 1.0.0
+ * @version 1.1.0
+ * @since 1.1.0 Add get method
  * @since 1.0.0 Class creation
  */
 class Controller extends \Bandama\Foundation\Controller\Controller {
@@ -53,9 +54,16 @@ class Controller extends \Bandama\Foundation\Controller\Controller {
 
     // Protected Methods
     /**
-     * @see \App\Foundation\Controller\Controller::url
+     * @see \Bandama\Foundation\Controller\Controller::url
      */
     protected function generateUrl($name, $params = array()) {
         return $this->config->baseUrl.'/'.$this->router->url($name, $params);
+    }
+
+    /**
+     * @see \Bandama\App::get
+     */
+    protected function get($key) {
+        return $this->app->get($key);
     }
 }

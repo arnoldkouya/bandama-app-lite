@@ -2,12 +2,18 @@
 
 namespace App;
 
+use \Bandama\Foundation\Router\Router;
+use \Bandama\Foundation\Session\PDOSessionHandler;
+use \Bandama\Foundation\Session\Session;
+use \Bandama\Foundation\Database\Connection;
+
 
 /**
  * Implements Bandama application logic
  *
  * @package App
- * @version 1.0.0
+ * @version 1.1.0
+ * @since 1.1.0 Moving application setup method of App class from constructor to getInstance method
  * @since 1.0.0 Class creation
  */
 class App extends \Bandama\App {
@@ -27,6 +33,11 @@ class App extends \Bandama\App {
      */
     protected $logger;
 
+
+    // Constants
+    const SESSION_HANDLER_DEFAULT = 'default';
+    const SESSION_HANDLER_PDO = 'pdo';
+
     // Constructors
     /**
      * Constructor
@@ -37,11 +48,7 @@ class App extends \Bandama\App {
      * @return void
      */
     protected function __construct($configFile = null, $mode = self::APP_MODE_PROD) {
-        parent::__construct($configFile, $mode);
-        
-        $this->setParameters();
-        $this->registerServices();
-        $this->registerLogger();        
+        parent::__construct($configFile, $mode);      
     }
 
 
@@ -81,30 +88,12 @@ class App extends \Bandama\App {
         $config = $this->get('config');
         
         $this->container->set('router', function () use ($config) {
-            $router = new \Bandama\Foundation\Router\Router();
+            $router = new Router();
             include($config->get('routes'));
 
             return $router;
         });
         
-    }
-
-
-    // Public Methods
-    /**
-     * Initialize and return App uniq instance
-     *
-     * @param array $configFile Application configuration file
-     *
-     * @return App
-     */
-    public static function getInstance($configFile = null, $mode = self::APP_MODE_PROD) {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new self($configFile, $mode);
-            self::$_instance->setup();
-        }
-
-        return self::$_instance;
     }
 
     /**
@@ -138,5 +127,59 @@ class App extends \Bandama\App {
         $this->container->set('logger', function() use($logger) {
             return $logger;
         });
+    }
+
+    /**
+     * Create and add session to container
+     *
+     * @return void
+     */
+    protected function registerSession() {
+        $sessionParams = $this->config->get('sessions');
+        $session = new Session();
+
+        if (strcmp($sessionParams['handler'], self::SESSION_HANDLER_DEFAULT) == 0) {
+            $this->container->set('session', function() use ($session) {
+                $session->start();
+
+                return $session;
+            });
+        } elseif (strcmp($sessionParams['handler'], self::SESSION_HANDLER_PDO) == 0) {
+            $databases = $this->config->get('databases');
+
+            $this->container->set('session', function() use ($session, $sessionParams, $databases) {
+                
+                $connection = new Connection($databases[$sessionParams['parameters']['database']]);
+                $handler = new PDOSessionHandler($connection, $sessionParams['parameters']);
+                $session = new Session();
+                $session->start(null, null, $handler);
+
+                return $session;
+            });
+        } else {
+            throw new Exception("Session handler not defined", 1);
+        }
+    }
+
+
+    // Public Methods
+    /**
+     * Initialize and return App uniq instance
+     *
+     * @param array $configFile Application configuration file
+     * @param string $mode Application running mode (dev, preprod, prod, etc.)
+     *
+     * @return App
+     */
+    public static function getInstance($configFile = null, $mode = self::APP_MODE_PROD) {
+        if (is_null(self::$_instance)) {
+            self::$_instance = new self($configFile, $mode);
+            self::$_instance->setup();
+            self::$_instance->setParameters();
+            self::$_instance->registerServices();
+            self::$_instance->registerLogger();  
+        }
+
+        return self::$_instance;
     }
 }
