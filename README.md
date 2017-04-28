@@ -99,6 +99,8 @@ Browse to http://localhost:8008
     - Improvement of application setup
     - Adding HelloServiceTest class 
     - Adding basic layout content
+    - Adding PDO Session Handler management
+    
 * 1.0.1
     - Bug fixed in .htaccess 
 
