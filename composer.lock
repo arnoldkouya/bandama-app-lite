@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "77ce87cd6041683a2226ed254c72f24e",
-    "content-hash": "b1d6f403c787631913df75f30a7f32d8",
+    "hash": "e0ce09fa940cdaf78a5b29c08cf77f28",
+    "content-hash": "01b5dc51a352551d571e7d1d74eb8432",
     "packages": [
         {
             "name": "bandama/framework",
-            "version": "1.0.8",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jfyoboue/bandama-framework.git",
-                "reference": "a5a8a948490c9ad891a963b1cf5781ad1dc7b798"
+                "reference": "bf95bd074e4076543f38491301d7f2c560465cfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jfyoboue/bandama-framework/zipball/a5a8a948490c9ad891a963b1cf5781ad1dc7b798",
-                "reference": "a5a8a948490c9ad891a963b1cf5781ad1dc7b798",
+                "url": "https://api.github.com/repos/jfyoboue/bandama-framework/zipball/bf95bd074e4076543f38491301d7f2c560465cfb",
+                "reference": "bf95bd074e4076543f38491301d7f2c560465cfb",
                 "shasum": ""
             },
             "require": {
@@ -50,20 +50,20 @@
                 }
             ],
             "description": "Bandama is a microframework for PHP application",
-            "time": "2017-02-23 09:54:41"
+            "time": "2017-04-26 00:19:06"
         },
         {
             "name": "monolog/monolog",
-            "version": "1.22.0",
+            "version": "1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558"
+                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bad29cb8d18ab0315e6c477751418a82c850d558",
-                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
+                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
                 "shasum": ""
             },
             "require": {
@@ -128,7 +128,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26 00:15:39"
+            "time": "2017-03-13 07:08:03"
         },
         {
             "name": "psr/log",
