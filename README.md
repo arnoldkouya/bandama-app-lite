@@ -95,6 +95,8 @@ Browse to http://localhost:8008
 
 ## Change log
 
+* 1.1.1
+    - Bug fixed - Removing index.php file in .gitignore
 * 1.1.0
     - Improvement of application setup
     - Adding HelloServiceTest class 
