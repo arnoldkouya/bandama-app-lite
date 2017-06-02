@@ -18,7 +18,7 @@ Got to the root directory of your project and run it typing
 
 ```bash
 $ cd bandama-project
-$ php -S 0.0.0.0:8008 -t web web/app.php
+$ php -S localhost:8008 -t web web/app.php
 ```
 
 Browse to http://localhost:8008
