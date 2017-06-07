@@ -1,1 +1,2 @@
 [2017-02-21 16:12:29] app_logger.INFO: App\Controller\HomeController - indexAction [] []
+[2017-06-07 17:41:29] app_logger.INFO: Hello page : name = jf [] []
