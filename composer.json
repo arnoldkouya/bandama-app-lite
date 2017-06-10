@@ -1,28 +1,30 @@
 {
     "name": "bandama/app-lite",
-    "description": "Bandama Application Skeleton with Monolog",
+    "description": "Bandama Application Skeleton with Monolog and Kahlan",
     "type": "project",
     "license": "MIT",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "require-dev": {
-        "php": ">=5.4"
+        "php": ">=5.5",
+        "kahlan/kahlan": "^3.1"
     },
     "require": {
-        "php": ">=5.4",
-        "bandama/framework": "1.1.*",
+        "php": ">=5.5",
+        "bandama/framework": "1.2.*",
         "monolog/monolog": "^1.22"
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Test\\": "tests/"
+            "App\\Test\\": "spec/"
         }
     },
     "autoload": {
         "psr-4": {
             "App\\": ["app/", "src/"],
-            "App\\Controller\\": "src/controllers",
-            "App\\Model\\": "src/models",
-            "App\\Service\\": "src/services"
+            "App\\Core\\": "app/core/",
+            "App\\Controller\\": "src/controllers/",
+            "App\\Model\\": "src/models/",
+            "App\\Service\\": "src/services/"
         }
     }
 }

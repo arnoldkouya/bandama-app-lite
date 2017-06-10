@@ -1,24 +1,24 @@
 # Bandama Application Lite Skeleton
 
-This is a simple skeleton project for [Bandama Framework](https://github.com/jfyoboue/bandama-framework) that includes Monolog.
+Bandama App Lite is a skeleton project for [Bandama Framework](https://github.com/jfyoboue/bandama-framework) that includes Monolog for logging and Kahlan for unit tests.
 
 ## Create a new project
 
 It's recommended that you use [Composer](https://getcomposer.org/) to create project.
 
 ```bash
-$ composer create-project --no-interaction bandama/app-lite bandama-project
+$ composer create-project --no-interaction bandama/app-lite [project-name]
 ```
 
-This will create new Bandama project and all required dependencies including Bandama Framework and Monolog. Bandama Project requires PHP 5.4 or newer.
+This will create new Bandama project and all required dependencies including Bandama Framework, Monolog and Kahlan. Bandama Project requires PHP 5.5 or newer.
 
 ## Run the project
 
 Got to the root directory of your project and run it typing
 
 ```bash
-$ cd bandama-project
-$ php -S 0.0.0.0:8008 -t web web/app.php
+$ cd [project-name]
+$ php -S localhost:8008 -t web web/app.php
 ```
 
 Browse to http://localhost:8008
@@ -30,19 +30,27 @@ Browse to http://localhost:8008
 
     This folder contains globals elements of application. It contains App and Configuration classes.
 
-    - App.php : This class implements application logic
-    - Configuration.php : Class for managing application configuration parameters
-    - Controller.php : Base controller class
+    * core
+
+        This folder contains App, Configuration and Controller classes which implements base application logic
+
+    - App.php : This class allow to extend and customize application logic
+    - Configuration.php : Class allowing customization of application configuration parameters
+    - Controller.php : Base application controller class
     - config
 
         Config folder contains configuration parameters splitted in many files:
 
         - databases.php : Collection of databases configuration
         - parameters.php : Application base parameters
-        - routes.php : Contains routes
-        - services.php : Collection of services
+        - routes.php : Contains routes definition
+        - services.php : Services used by application
         - sessions.php : User sessions parameters
-        - settings.php : Merging of other files
+        - settings.php : Merging of other configuration files
+
+* spec
+
+    Contains unit tests for project
 
 * src
 
@@ -62,9 +70,7 @@ Browse to http://localhost:8008
 
     - services
 
-* tests
-
-    Contains unit tests for project
+        Application services
 
 * var
     * logs
@@ -73,9 +79,11 @@ Browse to http://localhost:8008
 
 * vendor
 
-    Contains third party library, including Bandama Framework
+    Contains third party library, including Bandama Framework, Monolog and Kahlan
 
 * web
+
+    This folder contains public files
 
     - app.php : Application entry point
 
@@ -85,6 +93,7 @@ Browse to http://localhost:8008
         * css
         * images
         * js
+
     * data
 
         Contains another assets and data
@@ -95,6 +104,9 @@ Browse to http://localhost:8008
 
 ## Change log
 
+* 1.2.0
+    - Adding translator component
+    - Using [Kahlan](https://github.com/kahlan/kahlan) for unit tests
 * 1.1.1
     - Bug fixed - Removing index.php file in .gitignore
 * 1.1.0
