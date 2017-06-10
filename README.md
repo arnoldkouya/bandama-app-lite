@@ -17,7 +17,7 @@ This will create new Bandama project and all required dependencies including Ban
 Got to the root directory of your project and run it typing
 
 ```bash
-$ cd bandama-project
+$ cd [project-name]
 $ php -S localhost:8008 -t web web/app.php
 ```
 
